@@ -1,47 +1,156 @@
-Personal Finance Tracker
-A simple, interactive expense tracker built with Streamlit to log transactions, visualize spending by category, and monitor a monthly budget.
-Built as a hands-on project to learn core Streamlit concepts: session state, forms, tabs, sidebar filters, charts, and file persistence.
+# Personal Finance Tracker
 
-Features
+A simple, interactive expense tracker built with **Streamlit** to help users record transactions, monitor monthly spending, and visualize spending patterns. This project was developed to gain hands-on experience with Streamlit by implementing session state, forms, sidebar filters, interactive charts, tabs, and file persistence.
 
-Dashboard — KPI cards (total spent, budget left, transaction count), bar chart, donut chart, and spending-over-time line chart
-Entry Form — Add transactions with date, category, description, and amount, with input validation
-History — Filterable transaction table, CSV export, and a one-click reset
-Sidebar Filters — Filter the entire app by category and set a custom monthly budget
-Persistence — Transactions are saved to a local CSV file, so data survives a page refresh
+---
 
+## Features
 
-Tech Stack
+### Dashboard
 
-Streamlit — UI framework
-Pandas — data handling
-Plotly Express — interactive charts
+The dashboard provides an overview of your finances through:
 
+* Total amount spent
+* Remaining monthly budget
+* Total number of transactions
+* Spending by category (Bar Chart)
+* Category distribution (Donut Chart)
+* Spending over time (Line Chart)
 
-Getting Started
-1. Clone the repo
+### Add Transactions
+
+Users can add new expense records by entering:
+
+* Date
+* Category
+* Description
+* Amount
+
+The application validates all inputs before saving the transaction.
+
+### Transaction History
+
+The history page allows users to:
+
+* View all recorded transactions
+* Filter transactions by category
+* Export transaction history as a CSV file
+* Reset all stored transactions with a single click
+
+### Sidebar Controls
+
+The sidebar provides options to:
+
+* Set a monthly budget
+* Filter transactions by category
+
+These filters are applied throughout the application.
+
+### Data Persistence
+
+All transactions are stored in a local CSV file, ensuring data remains available even after refreshing or restarting the application.
+
+---
+
+## Tech Stack
+
+| Technology     | Purpose                               |
+| -------------- | ------------------------------------- |
+| Streamlit      | Interactive web application framework |
+| Pandas         | Data manipulation and analysis        |
+| Plotly Express | Interactive charts and visualizations |
+
+---
+
+## Getting Started
+
+### Clone the Repository
+
+```bash
 git clone https://github.com/YOUR_USERNAME/finance-tracker-streamlit.git
 cd finance-tracker-streamlit
-2. Install dependencies
+```
+
+### Install Dependencies
+
+```bash
 pip install -r requirements.txt
-3. Run the app
+```
+
+### Run the Application
+
+```bash
 streamlit run main.py
-The app will open automatically at http://localhost:8501
+```
 
-Project Structure
+The application will open automatically in your browser at:
+
+```
+http://localhost:8501
+```
+
+---
+
+## Project Structure
+
+```text
 finance-tracker-streamlit/
-├── main.py              # Main Streamlit application
-├── requirements.txt    # Python dependencies
-├── .gitignore           # Excludes cache files and personal transaction data
-└── readme.md
+│
+├── main.py                 # Main Streamlit application
+├── requirements.txt        # Python dependencies
+├── transactions.csv        # Stores transaction data (created automatically)
+├── .gitignore              # Excludes cache files and personal data
+└── README.md               # Project documentation
+```
 
-Streamlit Concepts Covered
-ConceptUsed Forst.session_statePersisting transaction data across rerunsst.tabsDashboard / Entry Form / History navigationst.sidebarCategory filters and budget inputst.formGrouping form inputs to avoid reruns on every keystrokest.metricKPI cardsst.columnsSide-by-side layoutst.plotly_chartBar, donut, and line chartsst.dataframeInteractive transaction tablest.download_buttonCSV exportst.expanderCollapsible raw data viewst.success / st.warning / st.error / st.infoUser feedback
+---
 
-Future Improvements
+## Streamlit Concepts Covered
 
-Multi-user support with authentication
-Switch from CSV storage to a proper database (SQLite/Postgres)
-Recurring transactions
-Custom date-range filtering
-Currency selector
+| Feature                                           | Purpose                                             |
+| ------------------------------------------------- | --------------------------------------------------- |
+| `st.session_state`                                | Persist transaction data across reruns              |
+| `st.tabs`                                         | Navigate between Dashboard, Entry Form, and History |
+| `st.sidebar`                                      | Budget settings and category filters                |
+| `st.form`                                         | Group user inputs and avoid unnecessary reruns      |
+| `st.metric`                                       | Display key financial metrics                       |
+| `st.columns`                                      | Create responsive layouts                           |
+| `st.plotly_chart`                                 | Display interactive charts                          |
+| `st.dataframe`                                    | Display transaction history                         |
+| `st.download_button`                              | Export data as CSV                                  |
+| `st.expander`                                     | Display raw transaction data                        |
+| `st.success`, `st.warning`, `st.error`, `st.info` | Provide user feedback                               |
+
+---
+
+## Future Improvements
+
+Planned enhancements include:
+
+* Multi-user authentication
+* Database integration using SQLite or PostgreSQL
+* Recurring transactions
+* Custom date-range filtering
+* Multiple currency support
+* Improved analytics and financial insights
+* Mobile-responsive layout
+
+---
+
+## Learning Outcomes
+
+This project demonstrates practical experience with:
+
+* Building interactive applications using Streamlit
+* Managing application state with `st.session_state`
+* Working with forms and user input validation
+* Data visualization using Plotly Express
+* Data manipulation using Pandas
+* CSV-based data persistence
+* Interactive filtering and data export functionality
+
+---
+
+## License
+
+This project is intended for educational and portfolio purposes. You are welcome to fork, modify, and extend it for your own learning.
